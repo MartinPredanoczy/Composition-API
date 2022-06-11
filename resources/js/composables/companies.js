@@ -10,6 +10,10 @@ export default function useCompanies() {
         companies.value = response.data.data;
     }
 
+    const destroyCompany = async (id) => {
+        await axios.delete('/api/companies/${id}');
+    }
+
     return {
         companies,
         getCompanies,
