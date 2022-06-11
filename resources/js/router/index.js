@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import CompaniesIndex from '../companies/CompaniesIndex.vue'
+import CompaniesIndex from '../components/companies/CompaniesIndex.vue'
 
 const routes = [
     {
