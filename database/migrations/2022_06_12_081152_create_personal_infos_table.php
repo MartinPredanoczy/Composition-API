@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('personal_infos', function (Blueprint $table) {
             $table->id();
-            $table->string('title_before_name')->nullable();
-            $table->string('name');
-            $table->string('surname');
-            $table->string('title_after_name')->nullable();
+            $table->string('title_before_name', 30)->nullable();
+            $table->string('name', 30);
+            $table->string('surname', 30);
+            $table->string('title_after_name', 30)->nullable();
+            $table->date('date_of_birth');
             $table->string('birth_number');
             $table->decimal('deposit', 20, 2);
             $table->decimal('company_share', 5, 2);
@@ -27,12 +28,11 @@ return new class extends Migration
             $table->string('nationality', 30);
             $table->string('identity_document', 20);
             $table->string('identity_document_number', 20);
-            $table->string('nationality', 30);
-            $table->boolean('is_partner');
-            $table->boolean('is_executive_manager');
-            $table->boolean('is_capital_administrator');
-            $table->boolean('is_residence_owner');
-            $table->boolean('is_ro_company');
+            $table->boolean('is_partner')->default(0);;
+            $table->boolean('is_executive_manager')->default(0);;
+            $table->boolean('is_capital_administrator')->default(0);;
+            $table->boolean('is_residence_owner')->default(0);;
+            $table->boolean('is_ro_company')->default(0);;
         });
     }
 
